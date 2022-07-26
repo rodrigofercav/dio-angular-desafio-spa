@@ -1,0 +1,13 @@
+.container-pessoa-view {
+    display: inline-flex;
+    width: 100%;
+}
+
+.container-crud {
+    width: 75%;
+    margin-right: 15px;
+}
+
+.container-listas-sexo {
+    width: 25%;
+}

@@ -1,0 +1,7 @@
+<div class="container-listas">
+    <h2>{{ titulo }}</h2>
+    <mat-list role="list">
+        <mat-list-item draggable="true" *ngFor="let pessoa of listaPorSexo" role="listitem">{{ pessoa.nome }}</mat-list-item>
+    </mat-list>
+</div>
+<br>

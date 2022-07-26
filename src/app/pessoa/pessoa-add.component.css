@@ -1,0 +1,15 @@
+.add-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-container mat-form-field {
+    width: 33%;
+}
+
+.btn-salvar {
+    margin-bottom: 20px;
+    width: 100px;
+    height: 40px;
+}

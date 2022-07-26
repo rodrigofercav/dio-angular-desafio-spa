@@ -1,0 +1,11 @@
+<div class="container-pessoa-view">
+    <div class="container-crud">
+        <app-pessoa-add (eeAtualizaFilhos)="atualizaFilhos()"></app-pessoa-add>
+        <app-pessoa-list [refreshGrid]="flagAtualizaFilhos"></app-pessoa-list>
+    </div>
+    <div class="container-listas-sexo">
+        <h2>Listas por Sexo</h2>
+        <app-pessoa-por-sexo [refreshList]="flagAtualizaFilhos" [flagSexo]="sexoEnum.FemininoSigla"></app-pessoa-por-sexo>
+        <app-pessoa-por-sexo [refreshList]="flagAtualizaFilhos" [flagSexo]="sexoEnum.MasculinoSigla"></app-pessoa-por-sexo>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<h2>Adicionar Pessoa</h2>
+<div class="add-container">
+    <mat-form-field appearance="outline">
+        <mat-label>Insira seu nome</mat-label>
+        <input matInput placeholder="Fulano de Tal" [formControl]="nome" required>
+        <mat-error *ngIf="nome.invalid">{{ validaNome() }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Insira seu e-mail</mat-label>
+        <input matInput placeholder="email@email.com" [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{ validaEmail() }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Sexo</mat-label>
+        <mat-select matNativeControl [formControl]="sexo" required>
+            <mat-option *ngFor="let s of listaSexos" [value]="s.sigla">
+                {{s.descricao}}
+            </mat-option>
+        </mat-select>
+        <mat-error *ngIf="sexo.invalid">{{ validaSexo() }}</mat-error>
+    </mat-form-field>
+</div>
+<button class="btn-salvar" mat-raised-button [disabled]="email.invalid || nome.invalid  || sexo.invalid " (click)="save()"
+    color="primary">Salvar</button>

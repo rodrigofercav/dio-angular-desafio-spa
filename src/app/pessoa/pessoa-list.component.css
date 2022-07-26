@@ -1,0 +1,9 @@
+table {
+    width: 100%;    
+}
+
+#container-lista-pessoas {
+    border: 1px solid gray;
+    border-radius: 5px;
+    overflow: hidden;
+}

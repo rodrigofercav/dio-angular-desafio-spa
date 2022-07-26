@@ -1,0 +1,31 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+        <mat-toolbar><img height="40" width="180" src="../../assets/images/angular-logo-1.png" alt="Logo Angular" srcset=""></mat-toolbar>
+        <mat-nav-list>
+            <!-- <a [routerLink]="['/home']" mat-list-item>
+                <mat-icon>space_dashboard</mat-icon><span class="text-side-menu">Home</span>
+            </a> -->
+            <a [routerLink]="['/pessoa']" mat-list-item>
+                <mat-icon>group</mat-icon><span class="text-side-menu">Pessoas</span>
+            </a>
+            <a [routerLink]="['/desafio']" mat-list-item >
+                <mat-icon>format_list_numbered</mat-icon><span class="text-side-menu">METAS Desafio</span>
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+                *ngIf="isHandset$ | async">
+                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+            <span>Primeiro desafio de Angular do Bootcamp Santander Fullstack</span>
+        </mat-toolbar>
+        <!-- Add Content Here -->
+        <div class="main-container">
+            <router-outlet></router-outlet>
+            <!-- <ng-content></ng-content> -->
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
